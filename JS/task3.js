@@ -1,16 +1,15 @@
 'use strict'
 
-
 const findBestEmployee = function (employees) {
-    let keyWithBiggestValue = ""
-    let maxValue = 0
-    for (const key in employees) {
-        if (maxValue < employees[key]) {
+    const keys = Object.keys(employees);
+    let keyWithBiggestValue = "";
+    for (const key of keys) {
+        let maxValue = employees[keys[0]];
+        if (maxValue <= employees[key]) {
             maxValue = employees[key];
             keyWithBiggestValue = key;
         }
     } console.log(keyWithBiggestValue);
-    
 };
 
 const firstDepartment = {

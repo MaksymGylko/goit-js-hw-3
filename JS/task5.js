@@ -10,9 +10,11 @@ const products = [
 const getAllPropValues = function (allProducts, prop) {
     const props = []
     for (const product of allProducts) {
-        props.push(product[prop])
-    }
-    return props;
+        if (!props.includes(prop)) {
+            props.push(product[prop])
+        }
+    } return props;
+    
     
 }
 console.log(getAllPropValues(products, 'name'));
